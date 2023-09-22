@@ -3,6 +3,6 @@
         "name": "agritourismo",
         "type": "theme",
         "file": "lib/plugins/RFU/agritourismo.py",
-        "path": "agritourismo-theme"
+        "slug": "agritourismo-theme"
     }
 ]
