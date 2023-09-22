@@ -7,7 +7,7 @@ try:
 except:
     print (f'[INFO] pip install -r requirements.txt')
 
-configs = json.load(open('config.json'))
+configs = json.load(open('pwndpress.json'))
 
 def themes(line):
     try:
