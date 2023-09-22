@@ -1,0 +1,7 @@
+{
+    "verify": true,
+    "redirect": true,
+    "timeout": 10,
+    "method": "requests",
+    "agent": null
+}
