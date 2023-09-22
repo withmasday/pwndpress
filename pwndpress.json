@@ -4,5 +4,47 @@
         "type": "theme",
         "file": "lib/themes/RFU/agritourismo.py",
         "slug": "agritourismo-theme"
+    },
+    {
+        "name": "bordeaux",
+        "type": "theme",
+        "file": "lib/themes/RFU/bordeaux.py",
+        "slug": "bordeaux-theme"
+    },
+    {
+        "name": "bulteno",
+        "type": "theme",
+        "file": "lib/themes/RFU/bulteno.py",
+        "slug": "bulteno-theme"
+    },
+    {
+        "name": "oxygen",
+        "type": "theme",
+        "file": "lib/themes/RFU/oxygen.py",
+        "slug": "oxygen-theme"
+    },
+    {
+        "name": "radial",
+        "type": "theme",
+        "file": "lib/themes/RFU/radial.py",
+        "slug": "radial-theme"
+    },
+    {
+        "name": "rayoflight",
+        "type": "theme",
+        "file": "lib/themes/RFU/rayoflight.py",
+        "slug": "rayoflight-theme"
+    },
+    {
+        "name": "reganto",
+        "type": "theme",
+        "file": "lib/themes/RFU/rayoflight.py",
+        "slug": "reganto-theme"
+    },
+    {
+        "name": "rockstar",
+        "type": "theme",
+        "file": "lib/themes/RFU/rockstar.py",
+        "slug": "rockstar-theme"
     }
 ]
