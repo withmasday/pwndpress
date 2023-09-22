@@ -1,6 +1,6 @@
 try:
     from fake_useragent import UserAgent
-    import requests, re, sys, json, argparse, cloudscraper, subprocess
+    import requests, re, sys, json, argparse, cloudscraper, subprocess, os
     from multiprocessing.dummy import Pool
     from urllib3.exceptions import InsecureRequestWarning
     requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
@@ -50,7 +50,12 @@ def init():
     1. Exploit Theme
     2. Exploit Plugin
     '''
-    
+    try:
+        os.system('clear')
+    except:
+        os.system('cls')
+        
+    print (banner)
     try:
         sitelist = input(' [?] SITELIST : ')
         urls = open(sitelist, "r", encoding='utf8').read().splitlines()
