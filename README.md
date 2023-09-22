@@ -13,7 +13,7 @@
 
 ## Install Dependencies
 
-**python3**
+**Python3**
 
 - [Download Python3](https://www.python.org/downloads/) (Mac, Linux, Windows)
 - Linux `sudo apt install python3 -y`
@@ -39,14 +39,14 @@ python3 pwndpress.py
 
 If you want to configure the request method, configure it in `requester.json`
 
-**Request Configuration**
+**Settings Request Configuration**
 
 | Variable | Type    | Function                                           |
 | :------- | :------ | :------------------------------------------------- |
 | verify   | boolean | Verify SSL on request                              |
 | redirect | boolean | Allow redirect response                            |
 | timeout  | int     | Request timeout                                    |
-| method   | string  | Request module `requests` or `cloudscraper`        |
+| method   | string  | Request module to use `requests` or `cloudscraper` |
 | agent    | string  | User Agent on request `null` or your browser agent |
 
 ```json
@@ -56,5 +56,36 @@ If you want to configure the request method, configure it in `requester.json`
   "timeout": 10,
   "method": "requests",
   "agent": null
+}
+```
+
+## Exploit Reference Platform
+
+- [ExploitDB](https://www.exploit-db.com/)
+- [WPScan](https://wpscan.com/)
+- [Packet Storm Security](https://packetstormsecurity.com/)
+- [SploitUS](https://sploitus.com/)
+- [0day.today](https://en.0day.today/webapps)
+
+## Contributing
+
+- Fork this repository [https://github.com/withmasday/pwndpress](https://github.com/withmasday/pwndpress)
+- Create your branch `git checkout -b your-branch`
+- Commit your changes `git commit -am 'Add some exploit'`
+- Push to the branch `git push origin your-branch`
+- Create a new Pull Request.
+
+### Note
+
+- You can add exploit files into the `lib` directory, place your exploits into a specific directory for example: `/lib/themes/RFU/exploitname.py`
+
+- Don't forget add your exploit to `pwndpress.json` with format :
+
+```json
+{
+  "name": "exploit name",
+  "type": "theme",
+  "file": "lib/themes/RFU/exploitname.py",
+  "slug": "agritourismo-theme"
 }
 ```
