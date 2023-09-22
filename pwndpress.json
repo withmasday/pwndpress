@@ -2,7 +2,7 @@
     {
         "name": "agritourismo",
         "type": "theme",
-        "file": "lib/plugins/RFU/agritourismo.py",
+        "file": "lib/themes/RFU/agritourismo.py",
         "slug": "agritourismo-theme"
     }
 ]
