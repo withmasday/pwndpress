@@ -1,1 +1,4 @@
 *.txt
+!list-plugin-sample.txt
+!list-theme-sample.txt
+!requirements.txt

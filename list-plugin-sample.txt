@@ -1,0 +1,2 @@
+[akismet] http://target.com
+[akismet] target.com

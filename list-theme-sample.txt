@@ -1,0 +1,2 @@
+[agritourismo-theme] http://target.com
+[agritourismo-theme] target.com
