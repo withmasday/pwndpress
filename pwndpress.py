@@ -9,36 +9,40 @@ except:
 
 configs = json.load(open('config.json'))
 
-def themes(url):
+def themes(line):
     try:
+        line = line.split(' ')
+        slug = line[0]
+        url = line[1]
+        
         for config in configs:
-            if config['type'] == 'plugin':
-                return False
-            else:pass
-            
-            name = config['name']
-            print (f'[CHECK] {name} => {url}')
-            action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
-            if action != '':
-                print (action)
-            else:pass
+            if config['type'] == 'plugin' and config['slug'] not in slug:pass
+            else:
+                name = config['name']
+                print (f'[CHECK] {name} => {url}')
+                action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
+                if action != '':
+                    print (action)
+                else:pass
     except Exception as err:
         print ('[ERROR] '+ url)
         pass
 
-def plugins(url):
+def plugins(line):
     try:
+        line = line.split(' ')
+        slug = line[0]
+        url = line[1]
+        
         for config in configs:
-            if config['type'] == 'theme':
-                return False
-            else:pass
-            
-            name = config['name']
-            print (f'[CHECK] {name} => {url}')
-            action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
-            if action != '':
-                print (action)
-            else:pass
+            if config['type'] == 'theme' and config['slug'] not in slug:pass
+            else:
+                name = config['name']
+                print (f'[CHECK] {name} => {url}')
+                action = subprocess.getoutput(f'python3 ./{config["file"]} -u {url}')
+                if action != '':
+                    print (action)
+                else:pass
     except Exception as err:
         print ('[ERROR] '+ url)
         pass 
